@@ -6,11 +6,10 @@
 
       public function get_all_users() {
           $db = db_connect();
-          $statement = $db->prepare("SELECT * FROM users;");
+          $statement = $db->prepare("select * from users;");
           $statement->execute();
-          $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+          $rows = $statement->fetch(PDO::FETCH_ASSOC);
           return $rows;
       }
 
   }
-  ?>
